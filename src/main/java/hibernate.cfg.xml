@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/sms</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <mapping class="com.codeshark.sms.domain.AddressEntity"/>
+        <mapping class="com.codeshark.sms.domain.AddressTypeEntity"/>
+        <mapping class="com.codeshark.sms.domain.AppUserEntity"/>
+        <mapping class="com.codeshark.sms.domain.AppUserBiometricEntity"/>
+        <mapping class="com.codeshark.sms.domain.AppUserBiometricHistoryEntity"/>
+        <mapping class="com.codeshark.sms.domain.AppUserFileEntity"/>
+        <mapping class="com.codeshark.sms.domain.AppUserFileHistoryEntity"/>
+        <mapping class="com.codeshark.sms.domain.AppUserHistoryEntity"/>
+        <mapping class="com.codeshark.sms.domain.AppUserTypeEntity"/>
+        <mapping class="com.codeshark.sms.domain.BiometricCategoryEntity"/>
+        <mapping class="com.codeshark.sms.domain.BiometricTypeEntity"/>
+        <mapping class="com.codeshark.sms.domain.FamilyUnitEntity"/>
+        <mapping class="com.codeshark.sms.domain.PersonEntity"/>
+        <mapping class="com.codeshark.sms.domain.PersonAddressEntity"/>
+        <mapping class="com.codeshark.sms.domain.PersonAddressHistoryEntity"/>
+        <mapping class="com.codeshark.sms.domain.PersonDetailEntity"/>
+        <mapping class="com.codeshark.sms.domain.PersonDetailHistoryEntity"/>
+        <mapping class="com.codeshark.sms.domain.PersonHistoryEntity"/>
+        <mapping class="com.codeshark.sms.domain.RelationTypeEntity"/>
+        <!-- <property name="connection.username"/> -->
+        <!-- <property name="connection.password"/> -->
+
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

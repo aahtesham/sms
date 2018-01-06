@@ -1,13 +1,9 @@
 package com.codeshark.sms.rws;
 
 
-import com.codeshark.sms.SmsApplication;
 import com.codeshark.sms.beans.ResponseObject;
 import com.codeshark.sms.beans.SignInBean;
 import com.codeshark.sms.commons.decorator.SMSDecorator;
-import com.codeshark.sms.commons.enumeration.ReturnStatusEnum;
-import com.codeshark.sms.commons.exception.GenericException;
-import com.codeshark.sms.domain.User;
 import com.codeshark.sms.rws.base.BaseRestfulWebService;
 import com.codeshark.sms.service.IUserService;
 import com.codeshark.sms.utill.DataBeanFactory;
@@ -15,14 +11,8 @@ import com.codeshark.sms.utill.DecoratorUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
-import javax.validation.Valid;
 import java.util.Date;
 
 @RestController
@@ -52,6 +42,9 @@ public class AppController extends BaseRestfulWebService {
             if (decorator.getResponseMessage() == null || decorator.getResponseMessage().length() <= 0) {
 
             }
+
+
+        decorator.setDataBean(signInBean);
        /* } catch (GenericException e) {
             decorator.setResponseMessage(e.getMessage());
             decorator.setReturnCode(ReturnStatusEnum.FAILURE.getValue());
